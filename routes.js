@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Login from './src/Screen/Login';
 import Home from './src/Screen/Home';
 import Cadastro from './src/Screen/Cadastro';
+import Carrinho from './src/Screen/Carrinho';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,7 +21,7 @@ function Tabs() {
               backgroundColor: '#353535',
               borderRadius: 50,
               marginHorizontal: 15,
-              marginBottom: 15,
+              marginBottom: 20,
               height: '7%'
           }
       }}
@@ -36,7 +37,7 @@ function Tabs() {
             />
         <Tab.Screen
             name="Carrinho"
-            component={Login}
+            component={Carrinho}
             options={{
                 tabBarIcon: ({ color, size }) => (
                   <MaterialCommunityIcons name="cart-outline" color={color} size={35} />
@@ -63,9 +64,9 @@ export default function Routes() {
                 headerShown: false
             }} 
         >
-            <Stack.Screen name="App" component={Tabs} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Cadastro" component={Cadastro} />
+            <Stack.Screen name="App" component={Tabs} />
         </Stack.Navigator>
     );
 }
