@@ -8,17 +8,20 @@ const produtos = [
     {
         id: 1,
         nome: 'Produto 1',
-        preco: 127.0
+        preco: 127.0,
+        image_url: 'https://a-static.mlcdn.com.br/618x463/hiper-100-whey-900g-cookies-cream-probiotica-probiotica/otimanutri/12955/a44712511628650ab6e956ae6d46a3dc.jpg'
     },
     {
         id: 2,
         nome: 'Produto 2',
-        preco: 127.0
+        preco: 127.0,
+        image_url: 'https://a-static.mlcdn.com.br/618x463/hiper-100-whey-900g-cookies-cream-probiotica-probiotica/otimanutri/12955/a44712511628650ab6e956ae6d46a3dc.jpg'
     },
     {
         id: 3,
         nome: 'Produto 3',
-        preco: 127.0
+        preco: 127.0,
+        image_url: 'https://a-static.mlcdn.com.br/618x463/hiper-100-whey-900g-cookies-cream-probiotica-probiotica/otimanutri/12955/a44712511628650ab6e956ae6d46a3dc.jpg'
     },
 ]
 
@@ -39,13 +42,14 @@ export default function() {
             <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                style={{ maxHeight: '26%' }}
+                style={{ maxHeight: '26%', marginLeft: 15 }}
             >
                 {produtos.map(produto => (
                     <ProdutoContainer
                         key={produto.id}
                         nome={produto.nome}
                         preco={produto.preco}
+                        image={produto.image_url}
                     />
                 ))}
             </ScrollView>
@@ -58,13 +62,14 @@ export default function() {
             <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                style={{ maxHeight: '26%' }}
+                style={{ maxHeight: '26%', marginLeft: 15 }}
             >
                 {produtos.map(produto => (
                     <ProdutoContainer
                         key={produto.id}
                         nome={produto.nome}
                         preco={produto.preco}
+                        image={produto.image_url}
                     />
                 ))}
             </ScrollView>
@@ -75,8 +80,7 @@ export default function() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#242525',
-        paddingHorizontal: 15
+        backgroundColor: '#242525'
     },
     titulo: {
         color: 'white',
@@ -89,8 +93,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 25,
-        marginBottom: 25
+        marginTop: '3%',
+        marginBottom: 25,
+        paddingHorizontal: 15
     },
     optionsTitle: {
         color: 'white',
